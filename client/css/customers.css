@@ -1,0 +1,123 @@
+/* A partir de aquí: Estilos de customers.html, tabla y form 
+
+  - No usar pixels, solo unidades relativas.
+  - Formato con dos columnas, una para la tabla y otra para el formulario de enviar email. Cada columna ocupará un 50% del ancho del contenedor padre.
+  - Y el contenedor padre ocupará el 80% del ancho y alto de la ventana del navegador.
+
+*/
+
+/* Estilos de la tabla */
+table {
+  border-collapse: collapse;
+}
+
+.table {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: scroll;
+}
+
+/* Estilos del título de la tabla */
+.table > h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Estilos de la cabecera de la tabla */
+thead {
+  background-color: #ccc;
+}
+
+/* Estilos de las celdas de la cabecera de la tabla */
+thead th {
+  border-bottom: .2rem solid rgb(126, 126, 126);
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* Estilos de las celdas de la tabla */
+tbody td {
+  font-size: 1rem;
+  padding: .6rem;
+  border-bottom: .1rem solid rgb(126, 126, 126);
+}
+
+/* Estilos del formulario de enviar email */
+.filter {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Estilos del título del formulario */
+.filter > h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Estilos del formulario */
+.filter > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Estilos de los campos del formulario */
+.filter > form > input {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+/* Estilo de los label del formulario */
+.filter > form > label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Estilos del botón del formulario */
+.filter > form > button {
+  padding: .6rem;
+  font-size: 1rem;
+  background-color: #ccc;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* Estilos del contenedor padre */
+.container {
+  border: 1px solid rgb(126, 126, 126);
+  border-radius: 2rem;
+  margin: 2rem auto;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Estilos del contenedor padre */
+.container {
+  border: 1px solid rgb(126, 126, 126);
+  border-radius: 2rem;
+  margin: 2rem auto;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}

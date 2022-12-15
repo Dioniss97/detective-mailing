@@ -1,0 +1,21 @@
+/* Archivo de normalización de los estilos predefinidos de html */
+
+/* 
+ * 1. Cambiar el box-sizing en todos los elementos para que el ancho y el alto
+ *    de los elementos sean los que se especifican en el CSS.
+ * 2. Establecer la fuente base para todos los elementos.
+ * 3. Eliminar estilos predefinidos de las listas.
+*/
+
+html {
+  box-sizing: border-box;
+  font-family: Verdana;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+ul {
+  list-style: none;
+}

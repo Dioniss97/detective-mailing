@@ -1,0 +1,109 @@
+/* A partir de aquí: Estilos de emails.html, tabla y form 
+
+  No usar pixels, solo unidades relativas.
+  Formato con dos columnas, una para la tabla y otra para el formulario de enviar email. Cada columna ocupará un 50% del ancho del contenedor padre.
+  Y el contenedor padre ocupará el 80% del ancho y alto de la ventana del navegador.
+
+*/
+
+.container {
+    border: 1px solid rgb(126, 126, 126);
+    border-radius: 2rem;
+    margin: 2rem auto;
+    width: 60%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  /* Estilos de la tabla */
+  table {
+    width: 50%;
+    height: 100%;
+    border-collapse: collapse;
+  }
+
+  .table {
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  /* Estilos del título de la tabla */
+  .table > h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos de la cabecera de la tabla */
+  thead {
+    background-color: #ccc;
+  }
+  
+  /* Estilos de las celdas de la cabecera de la tabla */
+  thead th {
+    border-bottom: .2rem solid rgb(126, 126, 126);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  /* Estilos de las filas dela tabla */
+  tbody tr {
+    border-bottom: .1rem solid rgb(126, 126, 126);
+  }
+  
+  /* Estilos de las celdas de la tabla */
+  tbody td {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  
+  /* Estilos del formulario de enviar email */
+  .form {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estilos del titulo del formulario */
+  .form h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos de los label del formulario */
+  .form label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos de los campos del formulario */
+  .form input {
+    width: 100%;
+    height: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+  }
+  
+  /* Estilos del botón del formulario */
+  .form button {
+    width: 60%;
+    height: 3rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+  }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta viewport="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/emails.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <title>Emails</title>
+</head>
+<body>
+
+    <!-- Un contendor que dentro tiene una tabla y un formulario, uno a cada lado.
+    La tabla muestra los campos: subject y content de los emails.
+    El formulario pide los campos: subject y email.
+    De esta forma montamos un panel que nos permite añadir emails a la tabla. -->
+
+    <div class="container">
+        <div class="table">
+            <h1>Emails</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Subject 1</td>
+                        <td>Content 1</td>
+                    </tr>
+                    <tr>
+                        <td>Subject 2</td>
+                        <td>Content 2</td>
+                    </tr>
+                    <tr>
+                        <td>Subject 3</td>
+                        <td>Content 3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form">
+            <h1>Add email</h1>
+            <form action="/emails" method="POST">
+                <label>Subject</label>
+                <input type="text" name="subject" placeholder="Subject">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Email">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

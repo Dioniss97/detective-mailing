@@ -1,0 +1,52 @@
+/*
+
+  No usar pixels, solo unidades relativas.
+
+*/
+
+/* Estilos del contenedor del login */
+.login {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos del titulo del login */
+.login h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Estilos de los label de login */
+.login label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Estilos de los campos email y password */
+.login input {
+  width: 100%;
+  height: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+/* Estilos del botón de login */
+.login button {
+  width: 60%;
+  height: 3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}

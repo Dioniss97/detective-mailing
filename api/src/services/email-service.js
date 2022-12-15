@@ -3,21 +3,47 @@ const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const dotenv = require('dotenv').config();
 const process = require('process');
+const db = require("../models");
+const SentEmail = db.SentEmail;
 
 module.exports = class EmailService {
 
     constructor() {
-        this.transport = nodemailer.createTransport({
-            service: "gmail",
-            auth: {
-                type: "OAuth2",
-                user: "dioniss1997@gmail.com",
-                clientId: process.env.GOOGLE_CLIENT_ID,
-                clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-                refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
-                accessToken: this.getAccessToken()
-            }
-        });
+
+        if(process.env.EMAIL) {
+
+            this.email = process.env.EMAIL; 
+
+            this.transport = nodemailer.createTransport({
+                pool: true,
+                host: "smtp.ionos.es",
+                port: 587,
+                secureConnection: false,
+                auth: {
+                    user: process.env.EMAIL,
+                    pass: process.env.EMAIL_PASSWORD,
+                },
+                tls: {
+                    ciphers:'SSLv3'
+                }
+            });
+
+        } else {
+
+            this.email = process.env.GOOGLE_EMAIL; 
+
+            this.transport = nodemailer.createTransport({
+                service: "gmail",
+                auth: {
+                    type: "OAuth2",
+                    user: process.env.GOOGLE_EMAIL,
+                    clientId: process.env.GOOGLE_CLIENT_ID,
+                    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+                    refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
+                    accessToken: this.getAccessToken()
+                }
+            });
+        }
     }
 
     getAccessToken() {
@@ -25,7 +51,7 @@ module.exports = class EmailService {
         const myOAuth2Client = new OAuth2(
             process.env.GOOGLE_CLIENT_ID,
             process.env.GOOGLE_CLIENT_SECRET,
-            "https://developers.google.com/oauthplayground;"
+            "https://developers.google.com/oauthplayground"
         )
 
         myOAuth2Client.setCredentials({
@@ -37,11 +63,11 @@ module.exports = class EmailService {
         return myAccessToken;
     }
 
-    sendEmail(email) {
+    sendEmail(email, customer) {
 
         const mailOptions = {
-            from: 'dioniss1997@gmail.com',
-            to: 'dioniss1997@gmail.com',
+            from: this.email, 
+            to: customer.email,
             subject: email.subject,
             html: email.content
         }
@@ -50,7 +76,12 @@ module.exports = class EmailService {
             if (err) {
                 console.log(err);
             } else {
-                console.log(result);
+                SentEmail.create(
+                    {
+                        customerId: customer.id,
+                        emailId: email.id
+                    }
+                )
             }
         });
     }

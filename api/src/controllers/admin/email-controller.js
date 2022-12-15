@@ -1,8 +1,8 @@
 const db = require("../../models");
-const Email = db.Email;
-const Op = db.Sequelize.Op;
 const EmailService = require("../../services/email-service");
-const User = db.User;
+const Email = db.Email;
+const Customer = db.Customer;
+const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
 
@@ -22,11 +22,10 @@ exports.create = (req, res) => {
 
     Email.create(email).then(data => {
 
-        new EmailService().sendEmail(data);
-
         res.status(200).send(data);
-        
+
     }).catch(err => {
+
         res.status(500).send({
             message: err.message || "Algún error ha surgido al insertar el dato."
         });
@@ -111,6 +110,41 @@ exports.delete = (req, res) => {
     }).catch(err => {
         res.status(500).send({
             message: "Algún error ha surgido al borrar la id=" + id
+        });
+    });
+};
+
+exports.sendEmail = async (req, res) => {
+    
+    let email = await Email.findByPk(req.body.id);
+    let whereStatement = {};
+
+    whereStatement.onService = true;
+
+    if(req.body.postalCode)
+        whereStatement.postalCode = {[Op.like]: `%${req.body.postalCode}%`};
+
+    if(req.body.city)
+        whereStatement.city = {[Op.like]: `%${req.body.city}%`};
+
+    if(req.body.startingServiceDate)
+        whereStatement.startingServiceDate = {[Op.gte]: req.body.startingServiceDate};
+
+    let condition = Object.keys(whereStatement).length > 0 ? {[Op.and]: [whereStatement]} : {};
+
+    Customer.findAll({ where: condition }).then(data => {
+        
+        data.forEach(customer => {
+            new EmailService().sendEmail(email, customer);
+        });
+
+        res.status(200).send({
+            message: "Emails enviados correctamente."
+        });
+
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Algún error ha surgido al enviar los emails."
         });
     });
 };

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta viewport="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/customers.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <title>Customers</title>
+</head>
+<body>
+
+    <!-- 
+    Un contendor que dentro tiene una tabla y un formulario, uno a cada lado.
+    La tabla muestra los campos: name, surname, email, postalCode, city, province, startingServiceDate, identifyNumber, onService, phone, mobile, address de los customers y 
+    añade scroll lateral porque la tabla puede ser muy larga.
+    El formulario es un filtro que pide los campos: postalCode, city y startingServiceDate.
+    De esta forma montamos un panel que nos permite filtrar los customers de la tabla.
+    -->
+
+    <div class="container">
+        <div class="table">
+            <h1>Customers</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Email</th>
+                        <th>Postal Code</th>
+                        <th>City</th>
+                        <th>Phone</th>
+                        <th>Starting Service Date</th>
+                        <th>Province</th>
+                        <th>Identify Number</th>
+                        <th>On Service</th>
+                        <th>Mobile</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Name 1</td>
+                        <td>Surname 1</td>
+                        <td>Email 1</td>
+                        <td>Postal Code 1</td>
+                        <td>City 1</td>
+                        <td>Phone 1</td>
+                        <td>Starting Service Date 1</td>
+                        <td>Province 1</td>
+                        <td>Identify Number 1</td>
+                        <td>On Service 1</td>
+                        <td>Mobile 1</td>
+                        <td>Address 1</td>
+                    </tr>
+                    <tr>
+                        <td>Name 2</td>
+                        <td>Surname 2</td>
+                        <td>Email 2</td>
+                        <td>Postal Code 2</td>
+                        <td>City 2</td>
+                        <td>Phone 2</td>
+                        <td>Starting Service Date 2</td>
+                        <td>Province 2</td>
+                        <td>Identify Number 2</td>
+                        <td>On Service 2</td>
+                        <td>Mobile 2</td>
+                        <td>Address 2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="filter">
+            <h1>Filter</h1>
+            <form action="/customers" method="POST">
+                <label>Postal Code</label>
+                <input type="text" name="postalCode" placeholder="Postal Code">
+                <label>City</label>
+                <input type="text" name="city" placeholder="City">
+                <label>Starting Service Date</label>
+                <input type="date" name="startingServiceDate" placeholder="Starting Service Date">
+                <button type="submit">Filter</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
