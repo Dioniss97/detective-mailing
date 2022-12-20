@@ -19,70 +19,96 @@
     De esta forma montamos un panel que nos permite filtrar los customers de la tabla.
     -->
 
-    <div class="container">
-        <div class="table">
+    <header>
+        <div class="logo">
+            <svg viewBox="0 0 24 24">
+                <path fill="currentColor" d="M16 17V19H2V17S2 13 9 13 16 17 16 17M12.5 7.5A3.5 3.5 0 1 0 9 11A3.5 3.5 0 0 0 12.5 7.5M15.94 13A5.32 5.32 0 0 1 18 17V19H22V17S22 13.37 15.94 13M15 4A3.39 3.39 0 0 0 13.07 4.59A5 5 0 0 1 13.07 10.41A3.39 3.39 0 0 0 15 11A3.5 3.5 0 0 0 15 4Z" />
+            </svg>
+        </div>
+        <div class="title">
             <h1>Customers</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Surname</th>
-                        <th>Email</th>
-                        <th>Postal Code</th>
-                        <th>City</th>
-                        <th>Phone</th>
-                        <th>Starting Service Date</th>
-                        <th>Province</th>
-                        <th>Identify Number</th>
-                        <th>On Service</th>
-                        <th>Mobile</th>
-                        <th>Address</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Name 1</td>
-                        <td>Surname 1</td>
-                        <td>Email 1</td>
-                        <td>Postal Code 1</td>
-                        <td>City 1</td>
-                        <td>Phone 1</td>
-                        <td>Starting Service Date 1</td>
-                        <td>Province 1</td>
-                        <td>Identify Number 1</td>
-                        <td>On Service 1</td>
-                        <td>Mobile 1</td>
-                        <td>Address 1</td>
-                    </tr>
-                    <tr>
-                        <td>Name 2</td>
-                        <td>Surname 2</td>
-                        <td>Email 2</td>
-                        <td>Postal Code 2</td>
-                        <td>City 2</td>
-                        <td>Phone 2</td>
-                        <td>Starting Service Date 2</td>
-                        <td>Province 2</td>
-                        <td>Identify Number 2</td>
-                        <td>On Service 2</td>
-                        <td>Mobile 2</td>
-                        <td>Address 2</td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
-        <div class="filter">
-            <h1>Filter</h1>
-            <form action="/customers" method="POST">
-                <label>Postal Code</label>
-                <input type="text" name="postalCode" placeholder="Postal Code">
-                <label>City</label>
-                <input type="text" name="city" placeholder="City">
-                <label>Starting Service Date</label>
-                <input type="date" name="startingServiceDate" placeholder="Starting Service Date">
-                <button type="submit">Filter</button>
-            </form>
+        <div class="menu">
+            <div class="emails">
+                <button>emails</button>
+            </div>
+            <div class="customers">
+                <button>customers</button>
+            </div>
+            <div class="logout">
+                <button>logout</button>
+            </div>
         </div>
-    </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="table">
+                <div class="table-title">
+                    <h1>Customers</h1>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Email</th>
+                            <th>Postal Code</th>
+                            <th>City</th>
+                            <th>Phone</th>
+                            <th>Starting Service Date</th>
+                            <th>Province</th>
+                            <th>Identify Number</th>
+                            <th>On Service</th>
+                            <th>Mobile</th>
+                            <th>Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Name 1</td>
+                            <td>Surname 1</td>
+                            <td>Email 1</td>
+                            <td>Postal Code 1</td>
+                            <td>City 1</td>
+                            <td>Phone 1</td>
+                            <td>Starting Service Date 1</td>
+                            <td>Province 1</td>
+                            <td>Identify Number 1</td>
+                            <td>On Service 1</td>
+                            <td>Mobile 1</td>
+                            <td>Address 1</td>
+                        </tr>
+                        <tr>
+                            <td>Name 2</td>
+                            <td>Surname 2</td>
+                            <td>Email 2</td>
+                            <td>Postal Code 2</td>
+                            <td>City 2</td>
+                            <td>Phone 2</td>
+                            <td>Starting Service Date 2</td>
+                            <td>Province 2</td>
+                            <td>Identify Number 2</td>
+                            <td>On Service 2</td>
+                            <td>Mobile 2</td>
+                            <td>Address 2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="filter">
+                <h1>Filter</h1>
+                <form action="/customers" method="POST">
+                    <label>Postal Code</label>
+                    <input type="text" name="postalCode" placeholder="Postal Code">
+                    <label>City</label>
+                    <input type="text" name="city" placeholder="City">
+                    <label>Starting Service Date</label>
+                    <input type="date" name="startingServiceDate" placeholder="Starting Service Date">
+                    <button type="submit">Filter</button>
+                </form>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

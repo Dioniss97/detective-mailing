@@ -1,12 +1,105 @@
-/* A partir de aquí: Estilos de customers.html, tabla y form 
+/* Estilos del header, respetando las tonalidades azules del proyecto:
+    - El header ocupará el 100% del ancho y alto de la ventana del navegador.
+    - El header tendrá un fondo degradado de tonos azules.
+    - El header tendrá un padding de 2rem.
+    - El header tendrá un display flex.
+    - El header estará dividido en 3 columnas, una para el logo, otra para el título y otra para el menu con el botón de logout y de ir a "Emails".
+    - El logo ocupará un 20% del ancho del header.
+    - El título ocupará un 50% del ancho del header.
+    - El menu ocupará un 30% del ancho del header.
+    - El menu tendrá un display flex.
+    - El menu tendrá un justify-content: flex-end.
+    - El menu tendrá un align-items: center.
+    - El botón de logout tendrá un color de fondo azul.
+    - El botón de logout tendrá un color de texto blanco.
+    - El botón de logout tendrá un padding de 1rem.
+    - El botón de logout tendrá un border-radius de 0.5rem.
+    - El botón de logout tendrá un cursor pointer.
+    - El botón de logout tendrá un margin-left de 1rem.
+    - El botón de logout tendrá un box-shadow de 0 0 10px 0 rgba(0, 0, 0, 0.2).
+    - El botón de logout tendrá un border de .1rem solid rgba(0, 0, 0, 0.2).
+    - El botón de logout tendrá un background-image de linear-gradient(45deg, #00b4db, #0083b0).
+    - El botón de logout tendrá un -webkit-background-clip: text.
+    - El botón de logout tendrá un -webkit-text-fill-color: transparent.
+    - El botón de logout tendrá un transition de 0.3s.
+    - El botón de logout tendrá un &:hover con un background-color de #0083b0.
+    - El botón de logout tendrá un &:hover con un color de #fff.
+    - El botón de logout tendrá un &:hover con un box-shadow de 0 0 10px 0 rgba(0, 0, 0, 0.4).
+    - El botón de logout tendrá un &:hover con un border de .1rem solid rgba(0, 0, 0, 0.4).
+    - El botón de ir a "Emails" tendrá un color de fondo azul y será igual al botón de logout.
 
-  - No usar pixels, solo unidades relativas.
-  - Formato con dos columnas, una para la tabla y otra para el formulario de enviar email. Cada columna ocupará un 50% del ancho del contenedor padre.
-  - Y el contenedor padre ocupará el 80% del ancho y alto de la ventana del navegador.
-
+    A partir de aquí, están los estilos del header definidos arriba para el archivo customers.html:
 */
 
-/* Estilos de la tabla */
+header {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #00b4db, #0083b0);
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.logo {
+  width: 20%;
+}
+
+.logo > svg {
+  color: #fff;
+  width: 4rem;
+}
+
+.title {
+  background: linear-gradient(45deg, #00b4db, #0083b0);
+  color: #fff;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: .2rem solid #fff;
+}
+
+.menu {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Estilos del botón de logout */
+.logout, .emails, .customers {
+  background-color: #00b4db;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border: .1rem solid rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #00b4db, #0083b0);
+  transition: 0.3s;
+}
+
+.logout > button, .emails > button, .customers > button {
+  font-size: 1.2rem;
+}
+
+.logout:hover, .emails:hover, .customers:hover {
+  background-color: #0083b0;
+  color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  border: .1rem solid rgba(0, 0, 0, 0.4);
+}
+
+.logout:active, .emails:active, .customers:active {
+  background-color: #0083b0;
+  color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  border: .1rem solid rgba(0, 0, 0, 0.4);
+}
+
 table {
   border-collapse: collapse;
 }
@@ -20,34 +113,44 @@ table {
   overflow-x: scroll;
 }
 
-/* Estilos del título de la tabla */
-.table > h1 {
+::-webkit-scrollbar {
+  color: #00b4db;
+  width: 0.5rem;
+  background-color: #00b4db;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0083b0;
+}
+
+.table-title > h1 {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #fff;
+  background-image: linear-gradient(45deg, #00b4db, #0083b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Estilos de la cabecera de la tabla */
 thead {
-  background-color: #ccc;
+  background: linear-gradient(#00b4db, #0083b0);
 }
 
-/* Estilos de las celdas de la cabecera de la tabla */
 thead th {
-  border-bottom: .2rem solid rgb(126, 126, 126);
+  color: #fff;
+  border-bottom: .1rem solid #0080ff;
   font-size: 1.2rem;
   font-weight: bold;
   padding: 10px;
 }
 
-/* Estilos de las celdas de la tabla */
 tbody td {
   font-size: 1rem;
   padding: .6rem;
-  border-bottom: .1rem solid rgb(126, 126, 126);
+  border-bottom: .1rem solid #0080ff;
 }
 
-/* Estilos del formulario de enviar email */
 .filter {
   width: 30%;
   height: 100%;
@@ -56,45 +159,48 @@ tbody td {
   justify-content: center;
 }
 
-/* Estilos del título del formulario */
 .filter > h1 {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #fff;
+  background-image: linear-gradient(45deg, #00b4db, #0083b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Estilos del formulario */
 .filter > form {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* Estilos de los campos del formulario */
 .filter > form > input {
-  margin-bottom: 10px;
-  padding: 10px;
+  padding: .6rem;
   font-size: 1rem;
+  border-bottom: .1rem solid #6e90ff;
+  margin-bottom: 1rem;
 }
 
-/* Estilo de los label del formulario */
 .filter > form > label {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  color: #fff;
+  background-image: linear-gradient(45deg, #00b4db, #0083b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: .6rem;
 }
 
-/* Estilos del botón del formulario */
 .filter > form > button {
   padding: .6rem;
   font-size: 1rem;
-  background-color: #ccc;
+  background: linear-gradient(#00b4db, #0083b0);
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
 }
 
-/* Estilos del contenedor padre */
 .container {
   border: 1px solid rgb(126, 126, 126);
   border-radius: 2rem;
@@ -108,7 +214,6 @@ tbody td {
   padding: 2rem;
 }
 
-/* Estilos del contenedor padre */
 .container {
   border: 1px solid rgb(126, 126, 126);
   border-radius: 2rem;
@@ -120,4 +225,8 @@ tbody td {
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
+}
+
+.customers {
+  display: none;
 }

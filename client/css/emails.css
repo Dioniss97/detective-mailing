@@ -1,109 +1,199 @@
-/* A partir de aquí: Estilos de emails.html, tabla y form 
+header {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #00b4db, #0083b0);
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 
-  No usar pixels, solo unidades relativas.
-  Formato con dos columnas, una para la tabla y otra para el formulario de enviar email. Cada columna ocupará un 50% del ancho del contenedor padre.
-  Y el contenedor padre ocupará el 80% del ancho y alto de la ventana del navegador.
+.logo {
+  width: 20%;
+}
 
-*/
+.logo > svg {
+  color: #fff;
+  width: 4rem;
+}
+
+.title {
+  background: linear-gradient(45deg, #00b4db, #0083b0);
+  color: #fff;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: .2rem solid #fff;
+}
+
+.menu {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Estilos del botón de logout */
+.logout, .emails, .customers {
+  background-color: #00b4db;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border: .1rem solid rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #00b4db, #0083b0);
+  transition: 0.3s;
+}
+
+.logout > button, .emails > button, .customers > button {
+  font-size: 1.2rem;
+}
+
+.logout:hover, .emails:hover, .customers:hover {
+  background-color: #0083b0;
+  color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  border: .1rem solid rgba(0, 0, 0, 0.4);
+}
+
+.logout:active, .emails:active, .customers:active {
+  background-color: #0083b0;
+  color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  border: .1rem solid rgba(0, 0, 0, 0.4);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.table {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+::-webkit-scrollbar {
+  color: #00b4db;
+  width: 0.5rem;
+  background-color: #00b4db;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0083b0;
+}
+
+.table-title > h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+  background-image: linear-gradient(45deg, #00b4db, #0083b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+thead {
+  background: linear-gradient(#00b4db, #0083b0);
+}
+
+thead th {
+  color: #fff;
+  border-bottom: .1rem solid #0080ff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px;
+}
+
+tbody td {
+  font-size: 1rem;
+  padding: .6rem;
+  border-bottom: .1rem solid #0080ff;
+}
+
+.filter {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.filter > h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+  background-image: linear-gradient(45deg, #00b4db, #0083b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.filter > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.filter > form > input {
+  padding: .6rem;
+  font-size: 1rem;
+  border-bottom: .1rem solid #6e90ff;
+  margin-bottom: 1rem;
+}
+
+.filter > form > label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background-image: linear-gradient(45deg, #00b4db, #0083b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: .6rem;
+}
+
+.filter > form > button {
+  padding: .6rem;
+  font-size: 1rem;
+  background: linear-gradient(#00b4db, #0083b0);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
 
 .container {
-    border: 1px solid rgb(126, 126, 126);
-    border-radius: 2rem;
-    margin: 2rem auto;
-    width: 60%;
-    height: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 2rem;
-  }
-  
-  /* Estilos de la tabla */
-  table {
-    width: 50%;
-    height: 100%;
-    border-collapse: collapse;
-  }
+  border: 1px solid rgb(126, 126, 126);
+  border-radius: 2rem;
+  margin: 2rem auto;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
 
-  .table {
-    height: 100%;
-    overflow-y: auto;
-  }
-  
-  /* Estilos del título de la tabla */
-  .table > h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  /* Estilos de la cabecera de la tabla */
-  thead {
-    background-color: #ccc;
-  }
-  
-  /* Estilos de las celdas de la cabecera de la tabla */
-  thead th {
-    border-bottom: .2rem solid rgb(126, 126, 126);
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 10px;
-  }
+.container {
+  border: 1px solid rgb(126, 126, 126);
+  border-radius: 2rem;
+  margin: 2rem auto;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
 
-  /* Estilos de las filas dela tabla */
-  tbody tr {
-    border-bottom: .1rem solid rgb(126, 126, 126);
-  }
-  
-  /* Estilos de las celdas de la tabla */
-  tbody td {
-    font-size: 1rem;
-    padding: 10px;
-  }
-  
-  /* Estilos del formulario de enviar email */
-  .form {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Estilos del titulo del formulario */
-  .form h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  /* Estilos de los label del formulario */
-  .form label {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  /* Estilos de los campos del formulario */
-  .form input {
-    width: 100%;
-    height: 2rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    padding: 0 10px;
-  }
-  
-  /* Estilos del botón del formulario */
-  .form button {
-    width: 60%;
-    height: 3rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
-  }
+.emails {
+  display: none;
+}

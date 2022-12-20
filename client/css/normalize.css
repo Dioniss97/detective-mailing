@@ -5,6 +5,12 @@
  *    de los elementos sean los que se especifican en el CSS.
  * 2. Establecer la fuente base para todos los elementos.
  * 3. Eliminar estilos predefinidos de las listas.
+ * 4. Eliminar estilos predefinidos de los formularios.
+ * 5. Eliminar estilos predefinidos de los botones.
+ * 6. Eliminar estilos predefinidos de los campos de entrada.
+ * 7. Eliminar estilos predefinidos de los encabezados.
+ * 8. Eliminar estilos predefinidos de los párrafos.
+ * 9. Eliminar estilos predefinidos de los enlaces.
 */
 
 html {
@@ -18,4 +24,39 @@ html {
 
 ul {
   list-style: none;
+}
+
+form {
+  margin: 0;
+}
+
+button {
+  color: inherit;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+input {
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
 }
